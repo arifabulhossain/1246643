@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>MMS Template - The Ultimate Multipurpose admin template</title>
+
+<![endif]-->
+
+
+    <style>
+        .mm{
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even){background-color: lightgrey;}
+
+        #customers tr:hover {background-color: lightblue;}
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: darkseagreen;
+            color: white;
+        }
+    </style>
+
+
+</head>
+
+<body>
+<div layout:fragment="custom-content">
+     <!-- ============================================================== -->
+     <!-- Bread crumb and right sidebar toggle -->
+     <!-- ============================================================== -->
+     <div class="page-breadcrumb">
+         <div class="row">
+             <div class="col-12 d-flex no-block align-items-center">
+                 <h1 class="page-title">MediAid (A Unique Hospital In Bangladesh)</h1>
+                 <div class="ml-auto text-right">
+                     <nav aria-label="breadcrumb">
+                         <ol class="breadcrumb">
+                             <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+                             <li class="breadcrumb-item active" aria-current="page">Library</li>
+                         </ol>
+                     </nav>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- ============================================================== -->
+     <!-- End Bread crumb and right sidebar toggle -->
+     <!-- ============================================================== -->
+
+
+     <!-- ============================================================== -->
+     <!-- Container fluid  -->
+     <!-- ============================================================== -->
+     <div class="container-fluid" >
+
+
+         <div class="container">
+             <div class="row">
+                 <div class="col-10">
+                     <h2> Today Payment  List</h2>
+                 </div>
+                 <div class="col-2">
+                     <a class="btn" th:href="@{/list}">Payment List</a>
+                 </div>
+             </div>
+
+
+
+             <table id="customers">
+                 <tr>
+                     <th>ID</th>
+                     <th>Patient Name</th>
+
+
+                     <th>Ref. Doctor Name</th>
+                     <th>Fee Amount</th>
+                     <th> Date</th>
+                     <th colspan="2">Action</th>
+                 </tr>
+
+
+
+
+                 <tr th:each="paymentinfo : ${list}">
+                     <td th:text="${paymentinfo.id}"></td>
+                     <td th:text="${paymentinfo?.patient?.name}"></td>
+
+                     <td th:text="${paymentinfo?.doctor?.doctorName}"></td>
+                     <td th:text="${paymentinfo.feeAmount}"></td>
+
+                     <td th:text="${paymentinfo.paymentDate}"></td>
+                     <!--
+                     <td th:text="${doctor.department}"></td>
+                     <td th:text="${doctor.chamber}"></td>
+                     <td th:text="${doctor.designation}"></td>
+                     <td th:text="${doctor.userRegistration}"></td>
+-->
+
+
+                     <td><a th:href="@{'/paymentinfo/edit/'+${paymentinfo.id}}">Edit</a></td>
+                     <td><a th:href="@{'/paymentinfo/del/'+${paymentinfo.id}}">Delete</a></td>
+
+                 </tr>
+                 <tr style="background: white">
+                     <td colspan="3" style="font-size: x-large"> Total Payment(Tk.)</td>
+                     <td th:text="${totalAmount}" style="font-weight: bold" colspan="4"></td>
+                 </tr>
+             </table>
+
+
+
+
+
+         </div>
+
+     </div>
+     <!-- ============================================================== -->
+     <!-- End Container fluid  -->
+     <!-- ============================================================== -->
+     <!-- ============================================================== -->
+</div>
+
+</body>
+
+</html>

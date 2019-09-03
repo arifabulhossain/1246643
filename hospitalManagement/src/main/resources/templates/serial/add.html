@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>Add Department</title>
+
+<!--[endif]-->
+
+
+    <style type="text/css">
+        .err {
+            color: red;
+        }
+
+        .succes {
+            color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+<div layout:fragment="custom-content">
+     <!-- ============================================================== -->
+     <!-- Bread crumb and right sidebar toggle -->
+     <!-- ============================================================== -->
+     <div class="page-breadcrumb">
+         <div class="row">
+             <div class="col-12 d-flex no-block align-items-center">
+                 <h2 class="page-title">MediAid (A Unique Hospital In Bangladesh)</h2>
+                 <div class="ml-auto text-right">
+                     <nav aria-label="breadcrumb">
+                         <ol class="breadcrumb">
+                             <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+                             <li class="breadcrumb-item active" aria-current="page">Library</li>
+                         </ol>
+                     </nav>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- ============================================================== -->
+     <!-- End Bread crumb and right sidebar toggle -->
+     <!-- ============================================================== -->
+
+
+     <!-- ============================================================== -->
+     <!-- Container fluid  -->
+     <!-- ============================================================== -->
+     <div class="container-fluid" >
+         <h3 class="page-title">Add Serial information</h3>
+
+         <span th:class="succes" th:text="${successMsg}"></span>
+         <div class="row" th:class="mm">
+             <div class="col-lg-8 col-md-12 col-12 col-sm-12">
+                 <div class="login-brand">
+                     Serial
+                 </div>
+
+
+                 <div class="card card-primary">
+                     <div class="card-header"><h4>Add New Serial</h4></div>
+                     <div class="card-body">
+
+                         <form action="#" th:object="${serial}" th:action="@{/serial/add}" th:method="POST">
+                             <div class="row">
+
+
+                                 <div class="form-group col-12">
+                                     <label for="serialNo">Serial No</label>
+                                     <input id="serialNo" type="number" th:field="*{serialNo}" class="form-control" name="serialNo"
+                                            placeholder="Enter A Doctor Name"/>
+                                 </div>
+
+
+
+
+
+                                 <div class="form-group col-12">
+                                     <label >Patient Name</label>
+
+                                     <select th:field="*{patient}" multiple>
+                                         <option th:each="p : ${patienttlist}" th:value="${p.id}">
+                                             <span th:text="${p.name}"></span>
+                                         </option>
+                                     </select>
+
+                                 </div>
+
+                                 <div class="form-group col-12">
+                                     <label >Doctor</label>
+
+                                     <select th:field="*{doctor}" multiple>
+                                         <option th:each="doctor : ${doctorlist}" th:value="${doctor.id}">
+                                             <span th:text="${doctor.doctorName}"></span>
+                                         </option>
+                                     </select>
+
+                                 </div>
+
+
+
+
+
+
+
+
+                                 <div class="form-group col-12">
+                                     <label >Chamber</label>
+
+                                     <select th:field="*{chamber}" multiple>
+                                         <option th:each="chamber : ${chamberlist}" th:value="${chamber.id}">
+                                             <span th:text="${chamber.doctorName}"></span>
+                                         </option>
+                                     </select>
+
+                                 </div>
+
+
+
+
+
+
+                             </div>
+
+
+
+                             <div class="form-group">
+                                 <button type="submit" class="btn btn-primary btn-block">
+                                     Add Doctor
+                                 </button>
+                             </div>
+
+
+
+                         </form>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+
+
+
+     </div>
+     <!-- ============================================================== -->
+     <!-- End Container fluid  -->
+     <!-- ============================================================== -->
+     <!-- ============================================================== -->
+</div>
+
+</body>
+
+</html>

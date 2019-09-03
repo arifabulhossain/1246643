@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>MMS Template - The Ultimate Multipurpose admin template</title>
+
+<![endif]-->
+
+
+    <style>
+        .mm{
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even){background-color:lightgrey;}
+
+        #customers tr:hover {background-color:lightblue;}
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color:darkseagreen;
+            color: white;
+        }
+    </style>
+
+
+</head>
+
+<body>
+<div layout:fragment="custom-content">
+     <!-- ============================================================== -->
+     <!-- Bread crumb and right sidebar toggle -->
+     <!-- ============================================================== -->
+     <div class="page-breadcrumb">
+         <div class="row">
+             <div class="col-12 d-flex no-block align-items-center">
+                 <h1 class="page-title">MediAid (A Unique Hospital In Bangladesh)</h1>
+                 <div class="ml-auto text-right">
+                     <nav aria-label="breadcrumb">
+                         <ol class="breadcrumb">
+                             <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+                             <li class="breadcrumb-item active" aria-current="page">Library</li>
+                         </ol>
+                     </nav>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- ============================================================== -->
+     <!-- End Bread crumb and right sidebar toggle -->
+     <!-- ============================================================== -->
+
+
+     <!-- ============================================================== -->
+     <!-- Container fluid  -->
+     <!-- ============================================================== -->
+     <div class="container-fluid" >
+
+
+         <div class="container">
+             <div class="row">
+                 <div class="col-10">
+                     <h2>Doctor & Department List</h2>
+                 </div>
+                 <div class="col-2">
+                     <a class="btn" th:href="@{/list}">Department List</a>
+                 </div>
+             </div>
+
+
+
+             <table id="customers">
+                 <tr>
+                     <th>ID</th>
+                     <th>Doctor Name</th>
+                     <th>Department Name</th>
+
+                     <th colspan="2">Action</th>
+                 </tr>
+
+                 <!--
+this.nomineeName = nomineeName;
+this.nomineeAge = nomineeAge;
+this.nomineeBirthDate = nomineeBirthDate;
+this.nomineeGender = nomineeGender;
+this.nomineeAddress = nomineeAddress;
+this.nomineeMobile = nomineeMobile;
+this.nomineeNid = nomineeNid;
+this.nomineeRelation = nomineeRelation;
+-->
+
+
+                 <tr th:each="department : ${list}">
+                     <td th:text="${department.id}"></td>
+                     <td th:text="${department.doctorName}"></td>
+                     <td th:text="${department.departmentName}"></td>
+
+                     <td><a th:href="@{'/nominee/edit/'+${department.id}}">Edit</a></td>
+                     <td><a th:href="@{'/nominee/del/'+${department.id}}">Delete</a></td>
+
+                 </tr>
+             </table>
+
+
+
+
+
+         </div>
+
+     </div>
+     <!-- ============================================================== -->
+     <!-- End Container fluid  -->
+     <!-- ============================================================== -->
+     <!-- ============================================================== -->
+</div>
+
+</body>
+
+</html>

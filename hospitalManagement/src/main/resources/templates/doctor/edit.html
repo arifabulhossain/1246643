@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>NMS Template - The Ultimate Multipurpose admin template</title>
+
+<![endif]-->
+
+    <style type="text/css">
+        .err {
+            color: red;
+        }
+
+        .succes {
+            color: green;
+        }
+    </style>
+
+
+</head>
+
+<body>
+<div layout:fragment="custom-content">
+     <!-- ============================================================== -->
+     <!-- Bread crumb and right sidebar toggle -->
+     <!-- ============================================================== -->
+     <div class="page-breadcrumb">
+         <div class="row">
+             <div class="col-12 d-flex no-block align-items-center">
+                 <h4 class="page-title">Add Nominee</h4>
+                 <div class="ml-auto text-right">
+                     <nav aria-label="breadcrumb">
+                         <ol class="breadcrumb">
+                             <li class="breadcrumb-item"><a href="#">Home</a></li>
+                             <li class="breadcrumb-item active" aria-current="page">Library</li>
+                         </ol>
+                     </nav>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- ============================================================== -->
+     <!-- End Bread crumb and right sidebar toggle -->
+     <!-- ============================================================== -->
+
+
+     <!-- ============================================================== -->
+     <!-- Container fluid  -->
+     <!-- ============================================================== -->
+     <div class="container-fluid" >
+
+
+
+         <div class="row" th:class="mm">
+             <div class="col-lg-8 col-md-12 col-12 col-sm-12">
+                 <div class="login-brand">
+                     Ngo System
+                 </div>
+
+
+                 <div class="card card-primary">
+                     <div class="card-header"><h4>Edit Nominee</h4></div>
+                     <div class="card-body">
+
+                         <form action="#" th:object="${nominee}" th:action="@{/nominee/edit}" th:method="POST">
+                             <div class="row">
+
+
+                                 <div class="form-group col-12">
+                                     <label for="nomineeName">Nominee Name</label>
+                                     <input id="nomineeName" type="text" th:field="*{nomineeName}" class="form-control" name="nomineeName">
+                                 </div>
+
+
+                                 <div class="form-group col-12">
+                                     <label for="nomineeAge">Nominee Age</label>
+                                     <input id="nomineeAge" type="text" th:field="*{nomineeAge}" class="form-control" name="nomineeAge">
+                                 </div>
+
+
+
+
+                                 <div class="form-group col-12">
+                                     <label for="nomineeBirthDate">Nominee BirthDate</label>
+                                     <input id="nomineeBirthDate" type="date" th:field="*{nomineeBirthDate}" class="form-control" name="nomineeBirthDate">
+                                 </div>
+
+
+                                 <div class="form-group col-12">
+                                     <label>Nominee Gender</label>
+                                     <input id="Mgender" type="radio" th:field="*{nomineeGender}" th:value="male" class="form-control" name="nomineeGender">Male
+                                     <input id="Fgender" type="radio" th:field="*{nomineeGender}" th:value="female" class="form-control" name="nomineeGender">Female
+                                 </div>
+
+
+                                 <!--
+this.nomineeName = nomineeName;
+this.nomineeAge = nomineeAge;
+this.nomineeBirthDate = nomineeBirthDate;
+this.nomineeGender = nomineeGender;
+this.nomineeAddress = nomineeAddress;
+this.nomineeMobile = nomineeMobile;
+this.nomineeNid = nomineeNid;
+this.nomineeRelation = nomineeRelation;
+      -->
+
+                                 <div class="form-group col-12">
+                                     <label for="nomineeAddress">Nominee Address</label>
+                                     <input id="nomineeAddress" type="text" th:field="*{nomineeAddress}" class="form-control" name="nomineeAddress">
+                                 </div>
+
+
+
+                                 <div class="form-group col-12">
+                                     <label for="nomineeRelation">Nominee Relation</label>
+                                     <input id="nomineeRelation" type="text" th:field="*{nomineeRelation}" class="form-control" name="nomineeRelation">
+                                 </div>
+
+
+
+                                 <div class="form-group col-12">
+                                     <label for="nomineeNid">Nominee_NID_No</label>
+                                     <input id="nomineeNid" type="text" th:field="*{nomineeNid}" class="form-control" name="nomineeNid">
+                                 </div>
+
+
+                                 <div class="form-group col-12">
+                                     <label for="nomineeMobile">Nominee Mobile</label>
+                                     <input id="nomineeMobile" type="text" th:field="*{nomineeMobile}" class="form-control" name="nomineeMobile">
+                                 </div>
+
+
+
+
+                             </div>
+
+
+
+                             <div class="form-group">
+                                 <button type="submit" class="btn btn-primary btn-block">
+                                      Edit Nominee
+                                 </button>
+                             </div>
+
+
+
+                         </form>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+
+
+
+     </div>
+     <!-- ============================================================== -->
+     <!-- End Container fluid  -->
+     <!-- ============================================================== -->
+     <!-- ============================================================== -->
+</div>
+
+</body>
+
+</html>

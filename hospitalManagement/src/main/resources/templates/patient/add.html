@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>Add Test</title>
+
+    <!--[endif]-->
+
+
+    <style type="text/css">
+        .err {
+            color: red;
+        }
+
+        .succes {
+            color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+<div layout:fragment="custom-content">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h2 class="page-title">MediAid (A Unique Hospital In Bangladesh)</h2>
+                <div class="ml-auto text-right">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Library</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+
+
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid" >
+
+
+        <span th:class="succes" th:text="${successMsg}"></span>
+        <div class="row" th:class="mm">
+            <div class="col-lg-8 col-md-12 col-12 col-sm-12">
+                <div class="login-brand">
+                    ....
+                </div>
+
+
+                <div class="card card-primary">
+                    <div class="card-header"><h4>Add Patient Information</h4></div>
+                    <div class="card-body">
+
+                        <form action="#" th:object="${patient}" th:action="@{/patient/add}" th:method="POST">
+                            <div class="row">
+
+
+                                <div class="form-group col-12">
+                                    <label for="pName">Patient Name</label>
+                                    <input id="pName" type="text" th:field="*{name}" class="form-control" name="pName"
+                                           placeholder="Please Enter Patient Name"/>
+                                </div>
+
+
+                                <div class="form-group col-12">
+                                    <label for="age"> Age</label>
+                                    <input id="age" type="text" th:field="*{age}" class="form-control" name="age"
+                                           placeholder="Please Enter Age"/>
+                                </div>
+
+                                <div class="form-group col-12">
+                                    <label>Gender</label>
+                                    <input id="Mgender" type="radio" th:field="*{gender}" th:value="male" class="form-control" name="gender">Male
+                                    <input id="Fgender" type="radio" th:field="*{gender}" th:value="female" class="form-control" name="gender">Female
+                                </div>
+
+
+                                <div class="form-group col-12">
+                                    <label for="bGroup">Blood Group</label>
+                                    <input id="bGroup" type="text" th:field="*{bloodGrop}" class="form-control" name="bGroup"
+                                           placeholder="Please Enter blood gropup"/>
+                                </div>
+
+
+                                <div class="form-group col-12">
+                                    <label for="address">Patient Address</label>
+                                    <input id="address" type="text" th:field="*{address}" class="form-control" name="address"
+                                           placeholder="Please Enter Address"/>
+                                </div>
+
+                                <div class="form-group col-12">
+                                    <label for="mail">EMail</label>
+                                    <input id="mail" type="email" th:field="*{email}" class="form-control" name="mail"
+                                           placeholder="Please Enter Email"/>
+                                </div>
+
+                                <div class="form-group col-12">
+                                    <label for="mobile">Contact No.</label>
+                                    <input id="mobile" type="text" th:field="*{mobile}" class="form-control" name="mobile"
+                                           placeholder="Please phone number"/>
+                                </div>
+
+
+
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    Add Patient Information
+                                </button>
+                            </div>
+
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+</div>
+
+</body>
+
+</html>

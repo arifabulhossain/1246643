@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<aside th:fragment="left" class="left-sidebar" data-sidebarbg="skin5">
+    <div class="scroll-sidebar">
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav" class="p-t-30">
+                <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" th:href="@{/}"
+                                            aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                        class="hide-menu">Dashboard</span></a></li>
+
+
+                <!-- Sidebar about-->
+
+                <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                            th:href="@{/about}" aria-expanded="false"><i
+                        class="mdi mdi-chart-bar"></i><span class="hide-menu">About</span></a></li>
+                <!-- Sidebar Services-->
+
+                <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                            th:href="@{/service}" aria-expanded="false"><i
+                        class="mdi mdi-chart-bar"></i><span class="hide-menu">Our Service</span></a></li>
+
+                <!-- Sidebar Mission & Vission-->
+
+                <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                            th:href="@{/vission}" aria-expanded="false"><i
+                        class="mdi mdi-chart-bar"></i><span class="hide-menu">Mission & Vision</span></a></li>
+
+                <!-- Sidebar doctor Profile-->
+
+                <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                            th:href="@{/profile}" aria-expanded="false"><i
+                        class="mdi mdi-chart-bar"></i><span class="hide-menu">Doctor Profile</span></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-receipt"></i><span class="hide-menu">Roles </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a th:href="@{/role/add}" class="sidebar-link"><i
+                                class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Role</span></a></li>
+                        <li class="sidebar-item"><a th:href="@{/role/list}" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> List of Roles</span></a></li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-receipt"></i><span class="hide-menu">Users </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a th:href="@{/user/add}" class="sidebar-link"><i
+                                class="mdi mdi-note-outline"></i><span class="hide-menu"> Add User</span></a></li>
+                        <li class="sidebar-item"><a th:href="@{/user/list}" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> List of Users </span></a></li>
+                    </ul>
+                </li>
+
+                <!--patient-->
+
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-receipt"></i><span class="hide-menu">Patients </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a th:href="@{/patient/add}" class="sidebar-link"><i
+                                class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Patient</span></a></li>
+                        <li class="sidebar-item"><a th:href="@{/patient/list}" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> List of Patients</span></a></li>
+                    </ul>
+                </li>
+
+                <!-- Chamber-->
+
+
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-receipt"></i><span class="hide-menu">Chamber </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a th:href="@{/chamber/add}" class="sidebar-link"><i
+                                class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Chamber</span></a></li>
+                        <li class="sidebar-item"><a th:href="@{/chamber/list}" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> List of Chamber</span></a></li>
+                    </ul>
+                </li>
+
+
+                <!-- Department-->
+
+
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-receipt"></i><span class="hide-menu">Department </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a th:href="@{/department/add}" class="sidebar-link"><i
+                                class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Department</span></a></li>
+                        <li class="sidebar-item"><a th:href="@{/department/list}" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> List of Department</span></a></li>
+                    </ul>
+                </li>
+
+                <!-- Designation-->
+
+
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-receipt"></i><span class="hide-menu">Designation </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a th:href="@{/designation/add}" class="sidebar-link"><i
+                                class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Designation</span></a></li>
+                        <li class="sidebar-item"><a th:href="@{/designation/list}" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> List of Designation</span></a></li>
+                    </ul>
+                </li>
+<!-- Doctor-->
+
+
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-receipt"></i><span class="hide-menu">Doctor </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a th:href="@{/doctor/add}" class="sidebar-link"><i
+                                class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Doctor</span></a></li>
+                        <li class="sidebar-item"><a th:href="@{/doctor/list}" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> List of Doctor</span></a></li>
+                    </ul>
+                </li>
+
+                <!-- Advice-->
+
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-receipt"></i><span class="hide-menu">Advices </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a th:href="@{/advice/add}" class="sidebar-link"><i
+                                class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Patient & Advices</span></a></li>
+                        <li class="sidebar-item"><a th:href="@{/advice/list}" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> List of Patient & Advices</span></a></li>
+                    </ul>
+                </li>
+
+
+
+                <!-- Attendant-->
+
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-receipt"></i><span class="hide-menu">Attendants </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a th:href="@{/attendant/add}" class="sidebar-link"><i
+                                class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Attendant</span></a></li>
+                        <li class="sidebar-item"><a th:href="@{/attendant/list}" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> List of Attendant</span></a></li>
+                    </ul>
+                </li>
+
+                <!-- PaymentInfo-->
+
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-receipt"></i><span class="hide-menu">Payment </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a th:href="@{/paymentinfo/add}" class="sidebar-link"><i
+                                class="mdi mdi-note-outline"></i><span class="hide-menu"> Add paymentinfo</span></a></li>
+                        <li class="sidebar-item"><a th:href="@{/paymentinfo/list}" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> List of Total Payment</span></a></li>
+
+
+                        <li class="sidebar-item"><a th:href="@{/paymentinfo/todaycollection}" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> Today Payment</span></a></li>
+
+
+                    </ul>
+                </li>
+
+
+
+                <!-- Serial-->
+
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-receipt"></i><span class="hide-menu">Serial </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a th:href="@{/serial/add}" class="sidebar-link"><i
+                                class="mdi mdi-note-outline"></i><span class="hide-menu"> Add serial</span></a></li>
+                        <li class="sidebar-item"><a th:href="@{/serial/list}" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> List of serial</span></a></li>
+                    </ul>
+                </li>
+
+                <!-- Drug-->
+
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-receipt"></i><span class="hide-menu">Drug </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a th:href="@{/drug/add}" class="sidebar-link"><i
+                                class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Drug</span></a></li>
+                        <li class="sidebar-item"><a th:href="@{/drug/list}" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> List of Drug</span></a></li>
+                    </ul>
+                </li>
+
+
+                <!-- causes-->
+
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-receipt"></i><span class="hide-menu">Causes </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a th:href="@{/causees/add}" class="sidebar-link"><i
+                                class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Patient & Diseases</span></a></li>
+                        <li class="sidebar-item"><a th:href="@{/causees/list}" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> List of Patient & Diseases</span></a></li>
+                    </ul>
+                </li>
+
+
+                <!-- Test-->
+
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-receipt"></i><span class="hide-menu">Test </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a th:href="@{/test/add}" class="sidebar-link"><i
+                                class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Patient & Test </span></a></li>
+                        <li class="sidebar-item"><a th:href="@{/test/list}" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> List of Patient & Test </span></a></li>
+                    </ul>
+                </li>
+
+                <!-- report-->
+
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-receipt"></i><span class="hide-menu">Report </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a th:href="@{/testreport/add}" class="sidebar-link"><i
+                                class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Report </span></a></li>
+                        <li class="sidebar-item"><a th:href="@{/testreport/list}" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> List of Report </span></a></li>
+                    </ul>
+                </li>
+
+
+
+                <!-- ptest-->
+
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-receipt"></i><span class="hide-menu">Ptest </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a th:href="@{/ptest/add}" class="sidebar-link"><i
+                                class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Ptest </span></a></li>
+                        <li class="sidebar-item"><a th:href="@{/ptest/list}" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> List of Ptest </span></a></li>
+                    </ul>
+                </li>
+
+
+
+
+<!-- End----End-- -------------------------------------------------------------------------------- -->
+
+
+
+
+
+                <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                            href="widgets.html" aria-expanded="false"><i
+                        class="mdi mdi-chart-bubble"></i><span class="hide-menu">Widgets</span></a></li>
+                <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="tables.html"
+                                            aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
+                        class="hide-menu">Tables</span></a></li>
+                <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="grid.html"
+                                            aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span
+                        class="hide-menu">Full Width</span></a></li>
+
+
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-receipt"></i><span class="hide-menu">Forms </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="form-basic.html" class="sidebar-link"><i
+                                class="mdi mdi-note-outline"></i><span class="hide-menu"> Form Basic </span></a></li>
+                        <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i
+                                class="mdi mdi-note-plus"></i><span class="hide-menu"> Form Wizard </span></a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                            href="pages-buttons.html" aria-expanded="false"><i
+                        class="mdi mdi-relative-scale"></i><span class="hide-menu">Buttons</span></a></li>
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span
+                        class="hide-menu">Icons </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i
+                                class="mdi mdi-emoticon"></i><span class="hide-menu"> Material Icons </span></a></li>
+                        <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i
+                                class="mdi mdi-emoticon-cool"></i><span
+                                class="hide-menu"> Font Awesome Icons </span></a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                            href="pages-elements.html" aria-expanded="false"><i
+                        class="mdi mdi-pencil"></i><span class="hide-menu">Elements</span></a></li>
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-move-resize-variant"></i><span class="hide-menu">Addons </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="index2.html" class="sidebar-link"><i
+                                class="mdi mdi-view-dashboard"></i><span class="hide-menu"> Dashboard-2 </span></a></li>
+                        <li class="sidebar-item"><a href="pages-gallery.html" class="sidebar-link"><i
+                                class="mdi mdi-multiplication-box"></i><span class="hide-menu"> Gallery </span></a></li>
+                        <li class="sidebar-item"><a href="pages-calendar.html" class="sidebar-link"><i
+                                class="mdi mdi-calendar-check"></i><span class="hide-menu"> Calendar </span></a></li>
+                        <li class="sidebar-item"><a href="pages-invoice.html" class="sidebar-link"><i
+                                class="mdi mdi-bulletin-board"></i><span class="hide-menu"> Invoice </span></a></li>
+                        <li class="sidebar-item"><a href="pages-chat.html" class="sidebar-link"><i
+                                class="mdi mdi-message-outline"></i><span class="hide-menu"> Chat Option </span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-account-key"></i><span class="hide-menu">Authentication </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="authentication-login.html" class="sidebar-link"><i
+                                class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Login </span></a></li>
+                        <li class="sidebar-item"><a href="authentication-register.html" class="sidebar-link"><i
+                                class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Register </span></a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i
+                        class="mdi mdi-alert"></i><span class="hide-menu">Errors </span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="error-403.html" class="sidebar-link"><i
+                                class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 403 </span></a></li>
+                        <li class="sidebar-item"><a href="error-404.html" class="sidebar-link"><i
+                                class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 404 </span></a></li>
+                        <li class="sidebar-item"><a href="error-405.html" class="sidebar-link"><i
+                                class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 405 </span></a></li>
+                        <li class="sidebar-item"><a href="error-500.html" class="sidebar-link"><i
+                                class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 500 </span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+</aside>
+</body>
+</html>

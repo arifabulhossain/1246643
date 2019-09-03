@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>Add Chamber</title>
+
+<!--[endif]-->
+
+
+    <style type="text/css">
+        .err {
+            color: yellow;
+        }
+
+        .succes {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+<div layout:fragment="custom-content">
+     <!-- ============================================================== -->
+     <!-- Bread crumb and right sidebar toggle -->
+     <!-- ============================================================== -->
+     <div class="page-breadcrumb">
+         <div class="row">
+             <div class="col-12 d-flex no-block align-items-center">
+                 <h2 class="page-title">MediAid (A Unique Hospital In Bangladesh)</h2>
+                 <div class="ml-auto text-right">
+                     <nav aria-label="breadcrumb">
+                         <ol class="breadcrumb">
+                             <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+                             <li class="breadcrumb-item active" aria-current="page">Library</li>
+                         </ol>
+                     </nav>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- ============================================================== -->
+     <!-- End Bread crumb and right sidebar toggle -->
+     <!-- ============================================================== -->
+
+
+     <!-- ============================================================== -->
+     <!-- Container fluid  -->
+     <!-- ============================================================== -->
+     <div class="container-fluid" >
+
+         <h3 class="page-title">Chamber Information</h3>
+
+         <div class="card-body">
+             <span th:class="succes" th:text="${successMsg}"></span>
+             <form action="#" th:object="${chamber}" th:action="@{/chamber/add}" th:method="POST">
+                 <div class="row">
+
+
+                     <div class="form-group col-12">
+                         <label for="doctorName">Doctor Name</label>
+                         <input id="doctorName" type="text" th:field="*{doctorName}" class="form-control" name="doctorName"
+                                placeholder="Enter A Doctor Name"/>
+                     </div>
+
+
+                     <div class="form-group col-12">
+                         <label for="phoneNo">Phone number</label>
+                         <input id="phoneNo" type="text" th:field="*{phoneNo}" class="form-control" name="phoneNo"
+                                placeholder="Enter Phone Number"/>
+                     </div>
+
+
+
+
+                     <div class="form-group col-12">
+                         <label for="email">E-Mail</label>
+                         <input id="email" type="text" th:field="*{email}" class="form-control" name="email"
+                                placeholder="Enter E-Mail Address"/>
+                     </div>
+
+
+
+
+
+
+
+                     <div class="form-group col-12">
+                         <label for="address"> Address</label>
+                         <input id="address" type="text" th:field="*{address}" class="form-control" name="address"
+                                placeholder="Enter Address"/>
+                     </div>
+
+
+
+                     <div class="form-group col-12">
+                         <label>Service</label>
+                         <select th:field="*{service}">
+                             <option value="">Select a Option</option>
+                             <option value="Medicine">Medicine</option>
+                             <option value="Gynology">Gynology</option>
+                             <option value="Neorology">Neorology</option>
+                             <option value="Urology">Urology</option>
+                             <option value="Cardiology">Cardiology</option>
+                             <option value="Gastrointrology">Gastrointrology</option>
+                             <option value="General Surgery">General Surgery</option>
+
+                         </select>
+
+                     </div>
+
+
+
+
+
+
+
+
+
+                 </div>
+
+
+
+                 <div class="form-group">
+                     <button type="submit" class="btn btn-primary btn-block">
+                         Save
+                     </button>
+                 </div>
+
+
+
+             </form>
+         </div>
+
+
+</div>
+
+</div>
+
+</body>
+
+</html>

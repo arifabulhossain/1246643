@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>Add Department</title>
+
+<!--[endif]-->
+
+
+    <style type="text/css">
+        .err {
+            color: red;
+        }
+
+        .succes {
+            color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+<div layout:fragment="custom-content">
+     <!-- ============================================================== -->
+     <!-- Bread crumb and right sidebar toggle -->
+     <!-- ============================================================== -->
+     <div class="page-breadcrumb">
+         <div class="row">
+             <div class="col-12 d-flex no-block align-items-center">
+                 <h2 class="page-title">MediAid (A Unique Hospital In Bangladesh)</h2>
+                 <div class="ml-auto text-right">
+                     <nav aria-label="breadcrumb">
+                         <ol class="breadcrumb">
+                             <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+                             <li class="breadcrumb-item active" aria-current="page">Library</li>
+                         </ol>
+                     </nav>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- ============================================================== -->
+     <!-- End Bread crumb and right sidebar toggle -->
+     <!-- ============================================================== -->
+
+
+     <!-- ============================================================== -->
+     <!-- Container fluid  -->
+     <!-- ============================================================== -->
+     <div class="container-fluid" >
+         <h3 class="page-title">Add Rport information</h3>
+
+         <span th:class="succes" th:text="${successMsg}"></span>
+         <div class="row" th:class="mm">
+             <div class="col-lg-8 col-md-12 col-12 col-sm-12">
+                 <div class="login-brand">
+                     Doctor
+                 </div>
+
+
+                 <div class="card card-primary">
+                     <div class="card-header"><h4>Add New Doctor</h4></div>
+                     <div class="card-body">
+
+                         <form action="#" th:object="${testreport}" th:action="@{/testreport/add}" th:method="POST">
+                             <div class="row">
+
+
+                                 <div class="form-group col-12">
+                                     <label for="tSample">Test Sample</label>
+                                     <input id="tSample" type="text" th:field="*{testSample}" class="form-control" name="tSample"
+                                            placeholder="Enter A Sample Name"/>
+                                 </div>
+
+
+                                 <div class="form-group col-12">
+                                     <label for="tResult">Test Result</label>
+                                     <input id="tResult" type="text" th:field="*{testResult}" class="form-control" name="tResult"
+                                            placeholder="Enter Result"/>
+                                 </div>
+
+
+                                 <div class="form-group col-12">
+                                     <label for="Status">Payment Status</label>
+                                     <input id="Status" type="text" th:field="*{status}" class="form-control" name="Status"
+                                            placeholder="Enter Status"/>
+                                 </div>
+
+
+
+<!--                                 <div class="form-group col-12">-->
+<!--                                     <label for="tdate">Delivery Date </label>-->
+<!--                                     <input id="tdate" type="date" th:field="*{tDate}" class="form-control" name="tdate"-->
+<!--                                            placeholder="Enter Date"/>-->
+<!--                                 </div>-->
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<!--                                 <div class="form-group col-12">-->
+<!--                                     <label >User</label>-->
+
+<!--                                     <select th:field="*{userRegistration}" multiple>-->
+<!--                                         <option th:each="user : ${userlist}" th:value="${user.id}">-->
+<!--                                             <span th:text="${user.userName}"></span>-->
+<!--                                         </option>-->
+<!--                                     </select>-->
+
+<!--                                 </div>-->
+
+
+
+
+
+
+                                 <div class="form-group col-12">
+                                     <label >Test Name</label>
+
+                                     <select th:field="*{test}" multiple>
+                                         <option th:each="test : ${testlist}" th:value="${test.id}">
+
+                                             <span th:text="${test.testName}"></span>
+                                         </option>
+                                     </select>
+
+                                 </div>
+
+
+                                 <div class="form-group col-12">
+                                     <label >Patient Name</label>
+
+                                     <select th:field="*{test}" multiple>
+                                         <option th:each="test : ${testlist}" th:value="${test.id}">
+                                             <span th:text="${test.patientName}"></span>
+
+                                         </option>
+                                     </select>
+
+                                 </div>
+
+
+                             </div>
+
+
+
+                             <div class="form-group">
+                                 <button type="submit" class="btn btn-primary btn-block">
+                                     Add Report
+                                 </button>
+                             </div>
+
+
+
+                         </form>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+
+
+
+     </div>
+     <!-- ============================================================== -->
+     <!-- End Container fluid  -->
+     <!-- ============================================================== -->
+     <!-- ============================================================== -->
+</div>
+
+</body>
+
+</html>

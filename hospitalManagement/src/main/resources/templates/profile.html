@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>Matrix Template - The Ultimate Multipurpose admin template</title>
+    <link href="static/dist/css/style.min.css"/>
+    <script src="static/dist/js/custom.min.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body>
+<div layout:fragment="custom-content">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Profile</h4>
+                <div class="ml-auto text-right">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Profile</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <center> <p><font color="green">  <h2>MediAid (A Unique Hospital In Bangladesh)</h2></font></p></center>
+        <center>  <h4>Matbererchar,Shibchar,Madaripur-7930</h4></center>
+        <center> <h5>www.mediaidhospital.com</h5></center>
+        <center><h6>+08801922901221</h6> </center>
+<hr>
+
+        <center><h3>Our Doctor Details</h3></center><hr>
+        <div class="row">
+            <div class="col-12">
+
+                <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <td>Doctor Details</td>
+                        <td>Designation</td>
+                        <td>Department</td>
+                        <td>Photo</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><p>Dr. Faqiqul Hyadar</p>
+                            <p>+088 01711204364</p>
+                            <p>dr.rafiqul@gmail.com</p>
+                        </td>
+                        <td>Consultant</td>
+                        <td>Medicine</td>
+                        <td><img th:src="@{/images/arif.png}" class="img-fluid" width="150" height="100"></td>
+                    </tr>
+                    </tbody>
+
+
+                    <tbody>
+                    <tr>
+                        <td><p>Dr. Farzana Islam</p>
+                            <p>+088 01711644348</p>
+                            <p>dr.islamfar@gmail.com</p>
+                        </td>
+                        <td>Professor</td>
+                        <td>Gynaecology</td>
+                        <td><img th:src="@{/images/female_img1.png}" class="img-fluid" width="150" height="100"></td>
+                    </tr>
+                    </tbody>
+                    <tbody>
+                    <tr>
+                        <td><p>Dr. Din Mohhammad</p>
+                            <p>+088 01711204348</p>
+                            <p>dr.dinmqul@gmail.com</p>
+                        </td>
+                        <td>Professor</td>
+                        <td>Gastrointrology</td>
+                        <td><img th:src="@{/images/doctor_image.jpg}" class="img-fluid" width="150" height="100"></td>
+                    </tr>
+                    </tbody>
+                    <tbody>
+                    <tr>
+                        <td><p>Dr.Rokeya Sultana Mili</p>
+                            <p>+088 01711203322</p>
+                            <p>dr.rubayet@gmail.com</p>
+                        </td>
+                        <td>Assistant Professor</td>
+                        <td>Cardilogy</td>
+                        <td><img th:src="@{/images/femaledoctor2.jpg}" class="img-fluid" width="150" height="100"></td>
+                    </tr>
+                    </tbody>
+
+
+
+                    <tbody>
+                    <tr>
+                        <td><p>Dr.Hasan Ali Hydar</p>
+                            <p>+088 01711203344</p>
+                            <p>dr.hassan@gmail.com</p>
+                        </td>
+                        <td>Associate Professor</td>
+                        <td>Neorology</td>
+                        <td><img th:src="@{/images/dblack.png}" class="img-fluid" width="150" height="100"></td>
+                    </tr>
+                    </tbody>
+
+                    <tbody>
+                    <tr>
+                        <td><p>Dr.Kaniz Fatema </p>
+                            <p>+088 01711203344</p>
+                            <p>dr.kaniz@gmail.com</p>
+                        </td>
+                        <td>Assistant Professor</td>
+                        <td>Surgery</td>
+                        <td><img th:src="@{/images/femaledr3.png}" class="img-fluid" width="150" height="100"></td>
+                    </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div><hr>
+
+        <div >
+            <h3>Author-</h3>
+            <h4>Abul Hossain Arif</h4>
+            <h6>aharif17@gmail.com</h6>
+            <h6>+08801922901221</h6>
+        </div>
+
+    </div>
+
+</div>
+</body>
+
+</html>

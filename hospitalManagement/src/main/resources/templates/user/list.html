@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>NMS Template - The Ultimate Multipurpose admin template</title>
+
+    <![endif]-->
+    <!--
+        <style type="text/css">
+            table {
+                width: 80%;
+                margin: 0 auto;
+            }
+        </style>
+    -->
+
+    <style>
+        .mm{
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even){background-color: lightgrey;}
+
+        #customers tr:hover {background-color: lightblue;}
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: darkseagreen;
+            color: white;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+<div layout:fragment="custom-content">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h2 class="page-title">MediAid (A Unique Hospital In Bangladesh)</h2>
+                <div class="ml-auto text-right">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Library</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+
+
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid" >
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-10">
+                    <h2>User  Details </h2>
+                </div>
+                <div class="col-2">
+                    <a class="btn" th:href="@{/list}">User List</a>
+                </div>
+            </div>
+
+            <table id="customers">
+                <tr>
+                    <th>ID</th>
+                    <th>User Name</th>
+                    <th>First Name</th>
+                    <th>LastName</th>
+                    <th>Gender</th>
+                    <th>Blood Group</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Contact No.</th>
+
+                    <th colspan="2">Action</th>
+
+                </tr>
+
+
+
+
+
+                <!--
+                 this.username = username;
+       this.firstName = firstName;
+       this.lastName = lastName;
+       this.birthDate = birthDate;
+       this.age = age;
+       this.gender = gender;
+       this.address = address;
+       this.regiDate = regiDate;
+       this.email = email;
+       this.mobile = mobile;
+       this.lastModifiedDate = lastModifiedDate;
+       this.roles = roles;
+                -->
+                <tr th:each="user : ${list}">
+                    <td th:text="${user.id}"></td>
+                    <td th:text="${user.userName}"></td>
+                    <td th:text="${user.firstName}"></td>
+                    <td th:text="${user.lastName}"></td>
+                    <td th:text="${user.gender}"></td>
+                    <td th:text="${user.bloodGroup}"></td>
+                    <td th:text="${user.address}"></td>
+                    <td th:text="${user.email}"></td>
+                    <td th:text="${user.phoneNo}"></td>
+
+                    <!--<td th:text="${user.roles}"></td>-->
+                    <td>
+                         <span th:each="role :${user.roles}">
+
+                         </span>
+                    </td>
+
+                    <td><a th:href="@{'/user/edit/'+${user.id}}">Edit</a></td>
+
+
+                </tr>
+            </table>
+
+
+        </div>
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+</div>
+
+</body>
+
+</html>
